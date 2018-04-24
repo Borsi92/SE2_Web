@@ -1,113 +1,108 @@
-/* Grid */
-.header { grid-area: header; }
-.menu { grid-area: menu; }
-.main { grid-area: main; }
-.footer { grid-area: footer; }
-
-.grid-container {
-    display: grid;
-    grid-template-areas:
-            'header header header header header header'
-            'menu main main main main main'
-            'footer footer footer footer footer footer';
-    grid-gap: 2px;
-    background-color: black;
-    padding: 2px;
+body{
+    font-family: sans-serif;
 }
-.grid-container > div {
-    background-color: rgba(255, 255, 255, 1);
-    padding: 20px 0;
+h1{
+    text-align: center;
 }
-
-/* Navigations Bar */
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #ffffff;
-}
-
-.menu li a {
-    display: block;
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-.menu li a.active {
-    background-color: #adadad;
-    color: black;
-}
-
-.menu li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+#container{
+    height: 80%;
 }
 
 /* Header */
-.header ul {
+header ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #ffffff;
 }
-.header ul li {
-    border:1px solid black;
-    float:left;
-    overflow:hidden;
-
+header ul li{
+    float: left;
+    width: 25%;
 }
-
-.header li {
+header ul li a{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    padding: 10px 16px;
+}
+header li a.active{
+    background-color: #e6e6e6;
+}
+header li a:hover{
+    background-color: #e6e6e6;
+}
+
+/* Menu */
+aside{
+    width: 25%;
     float: left;
+    margin-top: 15px;
+    border: 2px solid black;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height, damit es auch tatsächlich 25% breit ist */
 }
-
-.header li a {
+aside ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+aside ul li a{
     display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    color: black;
+    padding: 15px 16px;
+}
+aside ul li a.active{
+    background-color: #e6e6e6;
+    border-top: solid black;
+    border-bottom: solid black;
+}
+aside ul li a:hover{
+    background-color: #e6e6e6;
 }
 
-.header li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.header li a.active {
-    background-color: #adadad;
+/* Main */
+main{
+    float: right;
+    margin-top: 15px;
+    padding: 30px;
+    width: 75%;
+    height: 700px;
+    border: 1px solid black;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height, damit es auch tatsächlich 75% breit ist */
 }
 
 /* Footer */
-.footer ul {
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0097fb;
+}
+footer ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #3db1ff;
+    /*overflow: hidden;*/
 }
-
-.footer li {
+footer li {
     float: left;
+    width: calc(100% / 3);
 }
-
-.footer li a {
+footer li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-
-.footer li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.footer li a.active {
-    color: blue;
+footer li a:hover:not(.active) {
     background-color: blue;
+}
+footer li a.active {
+    color: blue;
+    border-bottom: solid blue;
 }
